@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}首页{% endblock %}
+
+{% block content %}
+    <h2>博客列表</h2>
+    <div class="blog-container">
+        {% if data %}
+            {% for record in data['data']['items'][::-1] %}
+                <div class="blog-card" style="position: relative;"> <!-- 设置为相对定位 -->
+                    <h3>{{ record['fields']['标题'] }}</h3>
+                    <!-- 提取概要内容输出的 text 字段 -->
+                    <p><strong>{{ record['fields']['金句输出'][0]['text']|safe }}</strong></p>
+                    <p>{{ record['fields']['概要内容输出'][0]['text'][:500] }}</p>
+                    <!-- 提取索引列的链接并设置为 href 属性 -->
+                    <a href="{{ record['fields']['索引']['link'] }}" target="_blank">阅读全文</a>
+                    <!-- 修改颜色为深灰色，固定在右下角，稍微往左移动 -->
+                    <p style="color: rgba(77, 73, 73, 0.753); position: absolute; bottom: 0; right: 10px; margin: 0;">{{ record['fields']['日期'][0]['text'] }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>暂无文章</p>
+        {% endif %}
+    </div>
+{% endblock %}
