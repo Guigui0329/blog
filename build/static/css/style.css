@@ -1,0 +1,96 @@
+/* 全局样式 */
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+}
+
+/* 博客容器样式 */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* 博客卡片样式 */
+.blog-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+    border: 1px solid #ddd;
+    /* 中国风元素：添加边框样式 */
+    border-color: #996633; 
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card h3 {
+    margin-top: 0;
+    color: #007BFF;
+}
+
+/* 调整金句输出和概要内容输出的段落样式 */
+.blog-card p {
+    line-height: 1.6;
+    margin: 10px 0; /* 调整上下边距 */
+}
+
+/* 增加金句和概要内容之间的间距 */
+.blog-card p:first-of-type {
+    margin-bottom: 20px; /* 增加金句段落的底部外边距 */
+}
+
+.blog-card a {
+    color: #007BFF;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.blog-card a:hover {
+    text-decoration: underline;
+}
+
+.quote-container {
+    flex-grow: 1;
+}
+
+.quote-text {
+    max-height: 4.8em; /* 假设每行 1.6em，3 行的高度 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: max-height 0.3s ease;
+}
+
+.expand-button {
+    background-color: transparent;
+    border: none;
+    color: #007BFF;
+    cursor: pointer;
+    margin-top: 5px;
+}
